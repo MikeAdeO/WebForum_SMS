@@ -16,3 +16,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get("/", "StudentsController@index");
+Route::get("/admin", "AdminsController@index");
+Route::get('/staff', "StaffsController@index");
+Route::get("/parent", "ParentsController@index");
+
+    
