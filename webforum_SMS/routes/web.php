@@ -17,7 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get("/", "StudentsController@index");
+Route::get("/student", "StudentsController@index");
 Route::get("/admin", "AdminsController@index");
 Route::get("/parent", "ParentsController@index");
 
@@ -32,3 +32,7 @@ Route::get('api/staff/{id}', 'StaffsController@getSingle');
 
 
     
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
