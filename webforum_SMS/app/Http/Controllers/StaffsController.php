@@ -13,15 +13,15 @@ class StaffsController extends Controller
     // FETCHING ALL STAFF RECORDS FROM DATABASE
     public function index()
     {
-        $staffs= Staff::all();
-        return $staffs;;
+        $staff= Staff::all();
+        return $staff;
     }
 
     //TO FETCH SINGLE STAFF
     public function getSingle(Request $request, $id)
     {
-        $staffs= Staff::where('id', $id)->first();
-        return $staffs;
+        $staff= Staff::where('id', $id)->first();
+        return $staff;
     }
 
         // SAVING NEW TEACHER RECORD TO DATABASE
@@ -108,8 +108,7 @@ class StaffsController extends Controller
         }else {
              return response()->json(['message' => 'Error while deleting resources'], 400);
 
-        }
-        
+        }      
 
     }
 }
