@@ -19,7 +19,10 @@ Route::get('/', function () {
 
 Route::get("/", "StudentsController@index");
 Route::get("/admin", "AdminsController@index");
-Route::get('/staff', "StaffsController@index");
 Route::get("/parent", "ParentsController@index");
+
+// API ROUTES TO HANDLE STAFF CONTROLLER
+Route::post('api/staff', "StaffsController@store");
+Route::get('api/staff', "StaffsController@index");
 
     
