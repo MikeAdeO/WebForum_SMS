@@ -19,8 +19,17 @@ Route::get('/', function () {
 
 Route::get("/student", "StudentsController@index");
 Route::get("/admin", "AdminsController@index");
-Route::get('/staff', "StaffsController@index");
 Route::get("/parent", "ParentsController@index");
+
+// API ROUTES TO HANDLE STAFF CONTROLLER  (Note: during tesing on Postman i disabled CSRF Protection at (App/Http/Middleware/VerifyCsrfToken) but before productio wil wil enable)
+Route::get('api/staff', "StaffsController@index");
+Route::post('api/staff', "StaffsController@store");
+Route::put('api/staff/{id}', 'StaffsController@update');
+Route::delete('api/staff/{id}', 'StaffsController@destroy');
+Route::get('api/staff/{id}', 'StaffsController@getSingle');
+
+
+
 
     
 
